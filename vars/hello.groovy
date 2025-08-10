@@ -1,5 +1,14 @@
-def call(){
-  echo "have a great day"
-  echo "same to you my buddy"
-  sh "whoami"
+@Libraries("shared_library") _
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                scripts{
+                    hello()
+                }
+            }
+        }
+    }
 }
